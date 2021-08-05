@@ -3,6 +3,7 @@
 
 # include <stdarg.h>
 # include <stdio.h>
+# include <unistd.h>
 # include "../libft/libft.h"
 
 void	push_swap(int argc, char **argv);
