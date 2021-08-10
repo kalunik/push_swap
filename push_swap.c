@@ -27,7 +27,6 @@ void	ft_errors(int argc, char **argv)
 {
 	int	i;
 	int	j;
-	int	ans;
 
 	i = 1;
 	j = 0;
@@ -35,6 +34,7 @@ void	ft_errors(int argc, char **argv)
 	{
 		while (argv[i][j])
 		{
+			write(1, &argv[i][j],1);
 			if (!((argv[i][j] > '/' && argv[i][j] < ':') || argv[i][j] == '-'))
 			{
 				ft_putstr_fd("Error\n", 1);
@@ -42,10 +42,16 @@ void	ft_errors(int argc, char **argv)
 			}
 			j++;
 		}
-		ans = ft_dublicate(i, argv);
-		printf("ans -- %d", ans);
-		if (ans == 0)
-			exit(0);
+		j = i + 1;
+		while (j <= argc)
+		{
+			if (ft_atoi(argv[i]) == ft_atoi(argv[j]))
+			{
+				ft_putstr_fd("Error\n", 1);
+				exit(0);
+			}
+			j++;
+		}
 		i++;
 		j = 0;
 	}
