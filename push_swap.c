@@ -5,19 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: wjonatho <wjonatho@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/20 15:12:08 by wjonatho          #+#    #+#             */
-/*   Updated: 2021/08/20 15:12:08 by wjonatho         ###   ########.fr       */
+/*   Created: 2021/09/05 13:18:36 by wjonatho          #+#    #+#             */
+/*   Updated: 2021/09/05 15:39:34 by wjonatho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/push_swap.h"
 
-void	ft_create_list(t_list **list, int num)
+void	ft_create_list(t_list **list, int value)
 {
 	t_list	*node;
 
 	node = malloc(sizeof(t_list));
-	node->data = num;
+	node->value = value;
 	node->next = *list;
 	*list = node;
 }
@@ -27,7 +27,7 @@ void	ft_print_list(t_list *list)
 	if (list)
 	{
 		ft_print_list(list->next);
-		ft_putnbr_fd(list->data, 1);
+		ft_putnbr_fd(list->value, 1);
 		ft_putchar_fd('\n', 1);
 	}
 }

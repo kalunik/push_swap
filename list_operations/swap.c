@@ -1,29 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wjonatho <wjonatho@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/05 13:42:23 by wjonatho          #+#    #+#             */
-/*   Updated: 2021/09/05 13:42:23 by wjonatho         ###   ########.fr       */
+/*   Created: 2021/09/05 19:28:56 by wjonatho          #+#    #+#             */
+/*   Updated: 2021/09/05 19:32:39 by wjonatho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../includes/push_swap.h"
 
-# include <stdarg.h>
-# include <stdio.h>
-# include <unistd.h>
-# include "../libft/libft.h"
+t_list	swap_first_two_elements(t_list *head)
+{
+	t_list	*tmp;
 
-typedef struct s_Node{
-	int				value;
-	struct s_Node	*next;
-}	t_list;
+	tmp = head;
 
-void	ft_errors(int argc, char **argv);
-void	push_swap(int argc, char **argv);
-
-#endif
+}
