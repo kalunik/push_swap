@@ -6,43 +6,26 @@
 /*   By: wjonatho <wjonatho@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/05 13:18:36 by wjonatho          #+#    #+#             */
-/*   Updated: 2021/09/05 15:39:34 by wjonatho         ###   ########.fr       */
+/*   Updated: 2021/09/06 17:29:26 by wjonatho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/push_swap.h"
 
-void	ft_create_list(t_list **list, int value)
-{
-	t_list	*node;
-
-	node = malloc(sizeof(t_list));
-	node->value = value;
-	node->next = *list;
-	*list = node;
-}
-
-void	ft_print_list(t_list *list)
-{
-	if (list)
-	{
-		ft_print_list(list->next);
-		ft_putnbr_fd(list->value, 1);
-		ft_putchar_fd('\n', 1);
-	}
-}
-
 void	ft_filling_stack(int argc, char **argv)
 {
 	int		i;
-	t_list	*list;
+	t_list	*stack_a;
 
 	i = 1;
+	stack_a = create_first_element(ft_atoi(argv[i++]));
 	while (i < argc)
 	{
-		ft_create_list(&list, ft_atoi(argv[i++]));
+		add_element_end(ft_atoi(argv[i++]), stack_a);
 	}
-	ft_print_list(list);
+	print_list(stack_a);
+	swap_first_two_elements(&stack_a);
+	print_list(stack_a);
 }
 
 void	push_swap(int argc, char **argv)

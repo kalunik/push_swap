@@ -1,7 +1,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "libft/libft.h"
+#include "libft.h"
 
 struct LIST {
 	int number;
