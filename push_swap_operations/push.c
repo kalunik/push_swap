@@ -6,19 +6,31 @@
 /*   By: wjonatho <wjonatho@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 17:59:15 by wjonatho          #+#    #+#             */
-/*   Updated: 2021/09/06 18:35:02 by wjonatho         ###   ########.fr       */
+/*   Updated: 2021/09/08 18:09:09 by wjonatho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	push_1st_from_src_stack_to_dst(t_list **src, t_list **dst)
+static void	push_1st_from_src_stack_to_dst(t_list **src, t_list **dst)
 {
 	if (*dst)
 		(*dst) = add_element_start((*src)->value, (*dst));
 	else
 		(*dst) = create_first_element((*src)->value);
 	remove_first_element(src);
+}
+
+void	pa(t_list **stack_b, t_list **stack_a)
+{
+	push_1st_from_src_stack_to_dst(stack_b, stack_a);
+	write(1, "pa\n", 3);
+}
+
+void	pb(t_list **stack_a, t_list **stack_b)
+{
+	push_1st_from_src_stack_to_dst(stack_a, stack_b);
+	write(1, "pb\n", 3);
 }
 
 /*

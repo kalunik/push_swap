@@ -6,19 +6,38 @@
 /*   By: wjonatho <wjonatho@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 18:26:00 by wjonatho          #+#    #+#             */
-/*   Updated: 2021/09/06 18:39:29 by wjonatho         ###   ########.fr       */
+/*   Updated: 2021/09/08 18:21:35 by wjonatho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	rotate(t_list **head)
+static void	rotate(t_list **head)
 {
 	if (*head)
 	{
 		add_element_end((*head)->value, (*head));
 		remove_first_element(head);
 	}
+}
+
+void	ra(t_list **stack_a)
+{
+	rotate(stack_a);
+	write(1, "ra\n", 3);
+}
+
+void	rb(t_list **stack_b)
+{
+	rotate(stack_b);
+	write(1, "rb\n", 3);
+}
+
+void	rr(t_list **stack_a, t_list **stack_b)
+{
+	rotate(stack_a);
+	rotate(stack_b);
+	write(1, "rr\n", 3);
 }
 
 /*

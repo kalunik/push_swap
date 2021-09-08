@@ -6,7 +6,7 @@
 /*   By: wjonatho <wjonatho@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/05 19:06:48 by wjonatho          #+#    #+#             */
-/*   Updated: 2021/09/07 19:55:48 by wjonatho         ###   ########.fr       */
+/*   Updated: 2021/09/08 15:58:35 by wjonatho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,30 +33,26 @@ void	remove_first_element(t_list **head)
 	(*head) = buf;
 }
 
-/*void	remove_last_element(t_list **head)
-{
-
-}*/
-
 void	remove_last_element(t_list **head)
 {
-	int        i, j;
-	t_list    *buf;
-	t_list    *last_elem;
+	int		len;
+	int		j;
+	t_list	*buf;
+	t_list	*last_elem;
 
 	if (*head)
 	{
-		i = 1;
 		j = 1;
-		buf = (*head);
+		/*buf = (*head);
 		while (buf)
 		{
 			buf = buf->next;
 			i++;
 		}
-		free(buf);
+		//free(buf); //todo вероятно вместо free надо buf = NULL*/
+		len = ft_listlen(*head);
 		buf = (*head);
-		while (j < i - 2)
+		while (j <= len - 2)
 		{
 			buf = buf->next;
 			j++;
