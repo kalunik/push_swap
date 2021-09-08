@@ -6,7 +6,7 @@
 /*   By: wjonatho <wjonatho@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/05 13:42:08 by wjonatho          #+#    #+#             */
-/*   Updated: 2021/09/05 13:42:08 by wjonatho         ###   ########.fr       */
+/*   Updated: 2021/09/07 16:03:01 by wjonatho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ static int	ft_not_a_number(int *o, int *k, char **argv)
 	{
 		if (!((argv[i][j] > '/' && argv[i][j] < ':') || argv[i][j] == '-'))
 		{
-			//printf("\nwrong char at argv[%d] -- %s\n", i, argv[i]); //TODO
+			//printf("\nwrong char at argv[%d] -- %s\n", i, argv[i]); //
+			// fixme delete comment
 			ft_putstr_fd("Error\n", 1);
 			return (1);
 		}
@@ -45,7 +46,7 @@ static int	ft_dublicates(int *o, int argc, char **argv)
 	{
 		if (ft_atoi(argv[i]) == ft_atoi(argv[j]))
 		{
-			//printf("\ndublicate at argv[%d] -- %s\n", j, argv[j]); //TODO
+			//printf("\ndublicate at argv[%d] -- %s\n", j, argv[j]); //  fixme delete comment
 			ft_putstr_fd("Error\n", 1);
 			return (1);
 		}
@@ -55,7 +56,7 @@ static int	ft_dublicates(int *o, int argc, char **argv)
 	return (0);
 }
 
-void	ft_errors(int argc, char **argv)
+void	errors(int argc, char **argv)
 {
 	int	i;
 	int	j;

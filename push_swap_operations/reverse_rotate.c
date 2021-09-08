@@ -6,7 +6,7 @@
 /*   By: wjonatho <wjonatho@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 18:26:00 by wjonatho          #+#    #+#             */
-/*   Updated: 2021/09/06 18:59:12 by wjonatho         ###   ########.fr       */
+/*   Updated: 2021/09/07 16:59:54 by wjonatho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	reverse_rotate(t_list **head)
 			buf = buf->next;
 		}
 		add_element_start(buf->value, (*head));
-		remove_first_element(head);
+		remove_last_element(head);
 	}
 }
 
@@ -37,7 +37,8 @@ int		main()
 	add_element_end(52, test);
 	add_element_end(100, test);
 	print_list(test);
-	reverse_rotate(&test);
+	//reverse_rotate(&test);
+	remove_last_element(&test);
 	print_list(test);
 	return (0);
 }

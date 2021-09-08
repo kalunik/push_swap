@@ -14,14 +14,11 @@
 
 void	push_1st_from_src_stack_to_dst(t_list **src, t_list **dst)
 {
-
-
 	if (*dst)
 		(*dst) = add_element_start((*src)->value, (*dst));
 	else
 		(*dst) = create_first_element((*src)->value);
 	remove_first_element(src);
-
 }
 
 /*

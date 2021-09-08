@@ -1,25 +1,35 @@
 CC	=	gcc
 RM	=	rm -f
 CFLAGS	=	-Wall -Wextra -Werror -I./includes
+PUSHLIB	=	push_swap.a
 NAME	=	push_swap
 LIBFT	=	./libft
-#LIBR	=	ar rcs
-SRCS	=	push_swap.c \
-			ft_errors.c \
-			list_operations/remove_element.c \
-			list_operations/add_element.c \
-            push_swap_operations/swap.c
+LIBR	=	ar rcs
+MAIN	=	main.c
+SRCS	=	list_operations/add_element.c\
+            list_operations/print_list.c\
+            list_operations/remove_element.c\
+            push_swap_operations/push.c\
+            push_swap_operations/reverse_rotate.c\
+            push_swap_operations/rotate.c\
+            push_swap_operations/swap.c\
+            errors.c\
+            push_swap.c\
 
-#OBJS	=	$(SRCS:.c=.o)
+OBJS	=	$(SRCS:.c=.o)
 
 all:
 			$(MAKE) -C $(LIBFT)
+			$(MAKE) $(PUSHLIB)
 			$(MAKE) $(NAME)
 
-$(NAME):	$(OBJS) $(LIBFT)/libft.a
-			@cp $(LIBFT)/libft.a ./$(NAME)
-			#@$(LIBR) $(NAME) $(OBJS)
-			@echo "Success"
+$(NAME):
+			@$(CC) -o $(NAME) $(PUSHLIB) $(MAIN)
+			@echo "push_swap is ready to use"
+
+$(PUSHLIB):		$(OBJS) $(LIBFT)/libft.a
+			@cp $(LIBFT)/libft.a ./$(PUSHLIB)
+			@$(LIBR) $(PUSHLIB) $(OBJS)
 
 %.o: %.c
 			@$(CC) $(CFLAGS) -c $< -o $@
@@ -31,7 +41,7 @@ clean:
 
 fclean: 	clean
 			@$(MAKE) -C $(LIBFT)/ fclean
-			@$(RM)	$(NAME)
+			@$(RM)	$(PUSHLIB) $(NAME)
 			@echo "Deleted"
 
 re:			fclean all
