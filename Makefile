@@ -7,6 +7,7 @@ LIBFT	=	./libft
 LIBR	=	ar rcs
 MAIN	=	main.c
 SRCS	=	list_operations/add_element.c\
+            list_operations/ft_listlen.c\
             list_operations/print_list.c\
             list_operations/remove_element.c\
             push_swap_operations/push.c\
@@ -15,6 +16,7 @@ SRCS	=	list_operations/add_element.c\
             push_swap_operations/swap.c\
             errors.c\
             push_swap.c\
+            sort_algorithm.c
 
 OBJS	=	$(SRCS:.c=.o)
 

@@ -52,6 +52,7 @@ void		ss(t_list **stack_a, t_list **stack_b);
 
 void		errors(int argc, char **argv);
 
+void	ft_filling_stack(int argc, char **argv);
 void		push_swap(int argc, char **argv);
 
 void		sort_algorithm(int argc, t_list **stack_a, t_list **stack_b);
