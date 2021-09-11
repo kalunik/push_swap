@@ -6,17 +6,14 @@
 /*   By: wjonatho <wjonatho@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/05 13:18:36 by wjonatho          #+#    #+#             */
-/*   Updated: 2021/09/10 18:08:48 by wjonatho         ###   ########.fr       */
+/*   Updated: 2021/09/11 19:17:33 by wjonatho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/push_swap.h"
 
-
-
 void	ft_filling_stack(int argc, char **argv)
 {
-	int		i;
 	t_list	*stack_a;
 	t_list	*stack_b;
 
@@ -26,9 +23,28 @@ void	ft_filling_stack(int argc, char **argv)
 	print_list(stack_a);
 }
 
+void	ft_is_sorted(int argc, char **argv)
+{
+	int	i;
+	int	unsorted_flag;
+
+	i = 1;
+	unsorted_flag = 0;
+	while (i < argc - 1)
+	{
+		if (ft_atoi(argv[i]) > ft_atoi(argv[i + 1]))
+			unsorted_flag++;
+		i++;
+		write(1, &i, 2);
+	}
+	if (unsorted_flag == 0)
+		exit(0);
+}
+
 void	push_swap(int argc, char **argv)
 {
 	errors(argc, argv);
+	ft_is_sorted(argc, argv);
 	ft_filling_stack(argc, argv);
 }
 

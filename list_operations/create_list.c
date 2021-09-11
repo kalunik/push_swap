@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../includes/push_swap.h"
+
+
 t_list	*create_first_element(int data)
 {
 	t_list	*node;
