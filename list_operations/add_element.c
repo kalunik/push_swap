@@ -12,16 +12,6 @@
 
 #include "../includes/push_swap.h"
 
-t_list	*create_first_element(int data)
-{
-	t_list	*node;
-
-	node = malloc(sizeof(t_list));
-	node->value = data;
-	node->next = NULL;
-	return (node);
-}
-
 t_list	*add_element_start(int data, t_list *head)
 {
 	t_list	*node;

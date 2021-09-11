@@ -9,6 +9,7 @@ MAIN	=	main.c
 SRCS	=	list_operations/add_element.c\
             list_operations/ft_listlen.c\
             list_operations/print_list.c\
+            list_operations/create_list.c\
             list_operations/remove_element.c\
             push_swap_operations/push.c\
             push_swap_operations/reverse_rotate.c\

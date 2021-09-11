@@ -21,11 +21,13 @@
 typedef struct s_Node{
 	int				value;
 	struct s_Node	*next;
-}	t_list;
+}			t_list;
 
-t_list		*create_first_element(int data);
 t_list		*add_element_start(int data, t_list *head);
 void		add_element_end(int data, t_list *head);
+
+t_list		*create_first_element(int data);
+t_list		*create_list(int argc, char **argv);
 
 size_t		ft_listlen(t_list *head);
 
