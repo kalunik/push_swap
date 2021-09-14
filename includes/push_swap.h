@@ -6,7 +6,7 @@
 /*   By: wjonatho <wjonatho@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/05 13:42:23 by wjonatho          #+#    #+#             */
-/*   Updated: 2021/09/08 19:30:08 by wjonatho         ###   ########.fr       */
+/*   Updated: 2021/09/14 16:10:02 by wjonatho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,12 @@ void		add_element_end(int data, t_list *head);
 
 t_list		*create_first_element(int data);
 t_list		*create_list(int argc, char **argv);
+
+int			find_max(t_list *list);
+int			find_min(t_list *list);
+int			element_position_in_list(int value, t_list *list);
+
+void		element_to_top(int argc, int position_of_element, t_list **list);
 
 size_t		ft_listlen(t_list *head);
 
@@ -54,9 +60,12 @@ void		ss(t_list **stack_a, t_list **stack_b);
 
 void		errors(int argc, char **argv);
 
-void	ft_filling_stack(int argc, char **argv);
+void		ft_filling_stack(int argc, char **argv);
 void		push_swap(int argc, char **argv);
 
+void		small_element_sort(int argc, t_list **stack_a, t_list **stack_b);
 void		sort_algorithm(int argc, t_list **stack_a, t_list **stack_b);
+void		three_element_sort(t_list **stack_a);
+void		two_element_sort(t_list **stack_a);
 
 #endif

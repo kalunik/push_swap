@@ -1,37 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   add_element.c                                      :+:      :+:    :+:   */
+/*   ft_listlen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wjonatho <wjonatho@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/05 16:38:24 by wjonatho          #+#    #+#             */
-/*   Updated: 2021/09/05 18:52:53 by wjonatho         ###   ########.fr       */
+/*   Created: 2021/09/08 15:48:06 by wjonatho          #+#    #+#             */
+/*   Updated: 2021/09/08 15:48:06 by wjonatho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
-t_list	*add_element_start(int data, t_list *head)
+size_t	ft_listlen(t_list *head)
 {
-	t_list	*node;
+	size_t	len;
+	t_list	*buf;
 
-	node = malloc(sizeof(t_list));
-	node->value = data;
-	node->next = head;
-	return (node);
+	len = 0;
+	buf = head;
+	while (buf)
+	{
+		buf = buf->next;
+		len++;
+	}
+	return (len);
 }
 
-void	add_element_end(int data, t_list *head)
-{
-	t_list	*node;
-	t_list	*tmp;
-
-	node = malloc(sizeof(t_list));
-	node->value = data;
-	node->next = NULL;
-	tmp = head;
-	while (tmp->next)
-		tmp = tmp->next;
-	tmp->next = node;
-}

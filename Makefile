@@ -6,18 +6,23 @@ NAME	=	push_swap
 LIBFT	=	./libft
 LIBR	=	ar rcs
 MAIN	=	main.c
-SRCS	=	list_operations/add_element.c\
-            list_operations/ft_listlen.c\
-            list_operations/print_list.c\
-            list_operations/create_list.c\
-            list_operations/remove_element.c\
-            push_swap_operations/push.c\
-            push_swap_operations/reverse_rotate.c\
-            push_swap_operations/rotate.c\
-            push_swap_operations/swap.c\
-            errors.c\
-            push_swap.c\
-            sort_algorithm.c
+SRCS	=	sources/list_operations/add_element.c\
+            sources/list_operations/create_list.c\
+            sources/list_operations/element_position_in_list.c\
+            sources/list_operations/element_to_top.c\
+            sources/list_operations/ft_listlen.c\
+            sources/list_operations/print_list.c\
+            sources/list_operations/remove_element.c\
+            sources/push_swap_operations/push.c\
+            sources/push_swap_operations/reverse_rotate.c\
+            sources/push_swap_operations/rotate.c\
+            sources/push_swap_operations/swap.c\
+            sources/sort/small_element_sort.c\
+            sources/sort/sort_algorithm.c\
+            sources/sort/three_element_sort.c\
+            sources/sort/two_element_sort.c\
+            sources/errors.c\
+            sources/push_swap.c
 
 OBJS	=	$(SRCS:.c=.o)
 

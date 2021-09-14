@@ -6,11 +6,11 @@
 /*   By: wjonatho <wjonatho@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/05 13:18:36 by wjonatho          #+#    #+#             */
-/*   Updated: 2021/09/11 19:17:33 by wjonatho         ###   ########.fr       */
+/*   Updated: 2021/09/14 16:01:16 by wjonatho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/push_swap.h"
+#include "push_swap.h"
 
 void	ft_filling_stack(int argc, char **argv)
 {
@@ -18,7 +18,7 @@ void	ft_filling_stack(int argc, char **argv)
 	t_list	*stack_b;
 
 	stack_a = create_list(argc, argv);
-	print_list(stack_a);
+	//print_list(stack_a);
 	sort_algorithm(argc, &stack_a, &stack_b);
 	print_list(stack_a);
 }

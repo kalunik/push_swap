@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_list.c                                       :+:      :+:    :+:   */
+/*   element_to_top.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wjonatho <wjonatho@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/06 17:14:49 by wjonatho          #+#    #+#             */
-/*   Updated: 2021/09/06 17:14:49 by wjonatho         ###   ########.fr       */
+/*   Created: 2021/09/14 14:07:17 by wjonatho          #+#    #+#             */
+/*   Updated: 2021/09/14 14:07:17 by wjonatho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
-void	print_list(t_list *head)
+void	element_to_top(int argc, int position_of_element, t_list **list)
 {
-	t_list	*tmp;
+	int	i;
 
-	tmp = head;
-	while (tmp)
+	i = 1;
+	if (position_of_element > (argc / 2))
 	{
-		ft_putnbr_fd(tmp->value, 1);
-		ft_putchar_fd('-', 1);
-		tmp = tmp->next;
+		while (i++ <= (argc - position_of_element))
+			rra(list);
 	}
-	ft_putchar_fd('\n', 1);
+	else
+	{
+		while (i++ < position_of_element)
+			ra(list);
+	}
 }

@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   print_list.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wjonatho <wjonatho@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/07 16:33:04 by wjonatho          #+#    #+#             */
-/*   Updated: 2021/09/13 17:50:57 by wjonatho         ###   ########.fr       */
+/*   Created: 2021/09/06 17:14:49 by wjonatho          #+#    #+#             */
+/*   Updated: 2021/09/06 17:14:49 by wjonatho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/push_swap.h"
+#include "push_swap.h"
 
-int	main(int argc, char **argv)
+void	print_list(t_list *head)
 {
-	//printf("\n%d", argc);
-	push_swap(argc, argv);
-	return (0);
+	t_list	*tmp;
+
+	tmp = head;
+	while (tmp)
+	{
+		ft_putnbr_fd(tmp->value, 1);
+		ft_putchar_fd('-', 1);
+		tmp = tmp->next;
+	}
+	ft_putchar_fd('\n', 1);
 }
