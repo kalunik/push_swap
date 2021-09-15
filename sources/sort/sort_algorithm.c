@@ -6,7 +6,7 @@
 /*   By: wjonatho <wjonatho@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 17:24:59 by wjonatho          #+#    #+#             */
-/*   Updated: 2021/09/14 13:58:46 by wjonatho         ###   ########.fr       */
+/*   Updated: 2021/09/15 17:07:30 by wjonatho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,13 @@
 	*a = *b;
 	*b = c;
 }*/
+
+/*
+void	quick_sort(t_list **stack_a, t_list **stack_b)
+{
+
+}
+*/
 
 void	sort_algorithm(int argc, t_list **stack_a, t_list **stack_b)
 {

@@ -6,19 +6,86 @@
 /*   By: wjonatho <wjonatho@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/05 13:18:36 by wjonatho          #+#    #+#             */
-/*   Updated: 2021/09/14 16:01:16 by wjonatho         ###   ########.fr       */
+/*   Updated: 2021/09/15 19:57:45 by wjonatho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+static void	swap(int *a, int *b)
+{
+	int	c;
+
+	c = *a;
+	*a = *b;
+	*b = c;
+}
+
+int	*fill_array(int argc, char **argv)
+{
+	int	*arr;
+	int	i;
+
+	i = 1;
+	arr = ft_calloc(argc, sizeof(int));
+	while (i < argc)
+	{
+		arr[i - 1] = ft_atoi(argv[i]);
+		i++;
+	}
+	return (arr);
+}
+
+int	*bubble_sort(int argc, char **argv)
+{
+	int	i;
+	int	*arr;
+
+	i = 0;
+	arr = fill_array(argc, argv);
+	while (i < argc)
+	{
+		if (arr[i] > arr[i + 1])
+			swap(&arr[i], &arr[i + 1]);
+		i++;
+	}
+	i = 0; ///fixme !!!!
+	return (arr);
+}
+
+void	find_support_elements(int argc, char **argv)
+{
+	int	i;
+	int	*arr;
+
+	i = 0;
+	//arr = fill_array(argc, argv);
+	arr = bubble_sort(argc, argv);
+	while (arr[i])
+	{
+		printf("\n arr[%d] = %d\n", i, arr[i]);
+		i++;
+	}
+}
+
 void	ft_filling_stack(int argc, char **argv)
 {
 	t_list	*stack_a;
 	t_list	*stack_b;
+/*	int i;
+	int	*arr;*/
 
+	//i = 0;
 	stack_a = create_list(argc, argv);
+	find_support_elements(argc, argv);
 	//print_list(stack_a);
+	/*arr = fill_array(argc, argv);
+	while (i < argc)
+	{
+		printf("\n arr[%d] = %d\n", i, arr[i]);
+		i++;
+	}*/
+
 	sort_algorithm(argc, &stack_a, &stack_b);
 	print_list(stack_a);
 }

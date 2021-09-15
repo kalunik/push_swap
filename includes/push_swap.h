@@ -6,7 +6,7 @@
 /*   By: wjonatho <wjonatho@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/05 13:42:23 by wjonatho          #+#    #+#             */
-/*   Updated: 2021/09/14 16:10:02 by wjonatho         ###   ########.fr       */
+/*   Updated: 2021/09/15 17:07:30 by wjonatho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@
 typedef struct s_Node{
 	int				value;
 	struct s_Node	*next;
+	int				flag;		//после добавления доп флагов потребуется malloc
+	int				support;
 }			t_list;
 
 t_list		*add_element_start(int data, t_list *head);
