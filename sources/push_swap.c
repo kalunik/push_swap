@@ -6,7 +6,7 @@
 /*   By: wjonatho <wjonatho@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/05 13:18:36 by wjonatho          #+#    #+#             */
-/*   Updated: 2021/09/15 19:57:45 by wjonatho         ###   ########.fr       */
+/*   Updated: 2021/09/16 15:40:23 by wjonatho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,17 +39,27 @@ int	*fill_array(int argc, char **argv)
 int	*bubble_sort(int argc, char **argv)
 {
 	int	i;
+	int	j;
+	int	sorted;
 	int	*arr;
 
 	i = 0;
+	sorted = 0;
 	arr = fill_array(argc, argv);
-	while (i < argc)
+	j = i + 1;
+	while (sorted < argc - 1)
 	{
-		if (arr[i] > arr[i + 1])
-			swap(&arr[i], &arr[i + 1]);
-		i++;
+		while (arr[i] > arr[j])
+		{
+			swap(&arr[i], &arr[j]);
+			i++;
+			j = i + 1;
+		}
+		i = 0;
+		j = i + 1;
+		if (arr[i] < arr[j])
+			sorted++;
 	}
-	i = 0; ///fixme !!!!
 	return (arr);
 }
 
