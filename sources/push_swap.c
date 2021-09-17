@@ -6,7 +6,7 @@
 /*   By: wjonatho <wjonatho@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/05 13:18:36 by wjonatho          #+#    #+#             */
-/*   Updated: 2021/09/16 15:40:23 by wjonatho         ###   ########.fr       */
+/*   Updated: 2021/09/17 18:50:39 by wjonatho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,25 +40,32 @@ int	*bubble_sort(int argc, char **argv)
 {
 	int	i;
 	int	j;
-	int	sorted;
 	int	*arr;
 
 	i = 0;
-	sorted = 0;
+	argc--;
 	arr = fill_array(argc, argv);
-	j = i + 1;
-	while (sorted < argc - 1)
+/*	while (j + 1 < argc)
 	{
-		while (arr[i] > arr[j])
+		while (arr[i] > arr[i + 1] && i + 1 < argc)
 		{
-			swap(&arr[i], &arr[j]);
+			swap(&arr[i], &arr[i + 1]);
 			i++;
-			j = i + 1;
 		}
-		i = 0;
-		j = i + 1;
-		if (arr[i] < arr[j])
-			sorted++;
+		j++;
+		i = j;
+	}*/
+	while (i < argc - 1)
+	{
+		j = 0;
+		while (j < argc - i - 1)
+		{
+			printf("%d\n", arr[j]);
+			if (arr[j] > arr[j + 1])
+				swap(&arr[i], &arr[i + 1]);
+			j++;
+		}
+		i++;
 	}
 	return (arr);
 }
@@ -71,7 +78,7 @@ void	find_support_elements(int argc, char **argv)
 	i = 0;
 	//arr = fill_array(argc, argv);
 	arr = bubble_sort(argc, argv);
-	while (arr[i])
+	while (i < argc)
 	{
 		printf("\n arr[%d] = %d\n", i, arr[i]);
 		i++;
