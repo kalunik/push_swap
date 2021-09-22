@@ -6,7 +6,7 @@
 /*   By: wjonatho <wjonatho@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/05 13:18:36 by wjonatho          #+#    #+#             */
-/*   Updated: 2021/09/17 18:50:39 by wjonatho         ###   ########.fr       */
+/*   Updated: 2021/09/22 17:37:37 by wjonatho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 static void	swap(int *a, int *b)
 {
-	int	c;
+	int	tmp;
 
-	c = *a;
+	tmp = *a;
 	*a = *b;
-	*b = c;
+	*b = tmp;
 }
 
 int	*fill_array(int argc, char **argv)
@@ -36,73 +36,66 @@ int	*fill_array(int argc, char **argv)
 	return (arr);
 }
 
-int	*bubble_sort(int argc, char **argv)
+void	bubble_sort(int arr[], int n)
 {
 	int	i;
 	int	j;
-	int	*arr;
 
 	i = 0;
-	argc--;
-	arr = fill_array(argc, argv);
-/*	while (j + 1 < argc)
-	{
-		while (arr[i] > arr[i + 1] && i + 1 < argc)
-		{
-			swap(&arr[i], &arr[i + 1]);
-			i++;
-		}
-		j++;
-		i = j;
-	}*/
-	while (i < argc - 1)
+	while (i < n - 1)
 	{
 		j = 0;
-		while (j < argc - i - 1)
+		while (j < n - i - 1)
 		{
-			printf("%d\n", arr[j]);
 			if (arr[j] > arr[j + 1])
-				swap(&arr[i], &arr[i + 1]);
+				swap(&arr[j], &arr[j + 1]);
 			j++;
 		}
 		i++;
 	}
-	return (arr);
 }
 
-void	find_support_elements(int argc, char **argv)
+int	*find_support(int *sorted_arr, int n)
+{
+	int	*sup_arr;
+	int	*index;
+	int	chunk_size;
+
+	chunk_size = n;
+	while (chunk_size >= 10)
+	{
+		if (chunk_size >= 10 && chunk_size < 20)
+			break ;
+		index[] = chunk_size / 2;
+	}
+	sup_arr = ft_calloc(, sizeof(int));
+}
+
+int	*support_elements(int argc, char **argv)
 {
 	int	i;
 	int	*arr;
+	int	*sup_arr;
 
 	i = 0;
-	//arr = fill_array(argc, argv);
-	arr = bubble_sort(argc, argv);
-	while (i < argc)
+	arr = fill_array(argc, argv);
+	bubble_sort(arr, argc - 1);
+	while (i < argc - 1)
 	{
 		printf("\n arr[%d] = %d\n", i, arr[i]);
 		i++;
 	}
+	sup_arr = find_support(arr, argc - 1);
 }
 
 void	ft_filling_stack(int argc, char **argv)
 {
 	t_list	*stack_a;
 	t_list	*stack_b;
-/*	int i;
-	int	*arr;*/
+	int	*sup;
 
-	//i = 0;
 	stack_a = create_list(argc, argv);
-	find_support_elements(argc, argv);
-	//print_list(stack_a);
-	/*arr = fill_array(argc, argv);
-	while (i < argc)
-	{
-		printf("\n arr[%d] = %d\n", i, arr[i]);
-		i++;
-	}*/
-
+	sup = support_elements(argc, argv);
 	sort_algorithm(argc, &stack_a, &stack_b);
 	print_list(stack_a);
 }
@@ -131,4 +124,3 @@ void	push_swap(int argc, char **argv)
 	ft_is_sorted(argc, argv);
 	ft_filling_stack(argc, argv);
 }
-

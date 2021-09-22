@@ -55,24 +55,48 @@ int main(int argc, char **argv)
 
 // C program for implementation of Bubble sort
 #include <stdio.h>
+#include "libft/libft.h"
+
+int	*fill_array(int argc, char **argv)
+{
+	int	*arr;
+	int	i;
+
+	i = 1;
+	arr = ft_calloc(argc, sizeof(int));
+	while (i < argc)
+	{
+		arr[i - 1] = ft_atoi(argv[i]);
+		i++;
+	}
+	return (arr);
+}
 
 void swap(int *xp, int *yp)
 {
-	int temp = *xp;
+	int	temp = *xp;
 	*xp = *yp;
 	*yp = temp;
 }
 
 // A function to implement bubble sort
-void bubbleSort(int arr[], int n)
+void	bubbleSort(int arr[], int n)
 {
-	int i, j;
-	for (i = 0; i < n-1; i++)
+	int	i;
+	int	j;
 
-		// Last i elements are already in place
-		for (j = 0; j < n-i-1; j++)
-			if (arr[j] > arr[j+1])
-				swap(&arr[j], &arr[j+1]);
+	i = 0;
+	while (i < n - 1)
+	{
+		j = 0;
+		while (j < n - i - 1)
+		{
+			if (arr[j] > arr[j + 1])
+				swap(&arr[j], &arr[j + 1]);
+			j++;
+		}
+		i++;
+	}
 }
 
 /* Function to print an array */
@@ -85,12 +109,13 @@ void printArray(int arr[], int size)
 }
 
 // Driver program to test above functions
-int main()
+int	main(int argc, char **argv)
 {
-	int arr[] = {64, 34, 25, 12, 22, 11, 90};
-	int n = sizeof(arr)/sizeof(arr[0]);
-	bubbleSort(arr, n);
+	int	*arr;
+
+	arr = fill_array(argc, argv);
+	bubbleSort(arr, argc - 1);
 	printf("Sorted array: \n");
-	printArray(arr, n);
+	printArray(arr, argc - 1);
 	return 0;
 }

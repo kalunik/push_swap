@@ -1,6 +1,6 @@
 CC	=	gcc
 RM	=	rm -f
-CFLAGS	=	-Wall -Wextra -Werror -I./includes
+CFLAGS	=	-I./includes #-Wall -Wextra -Werror -I./includes
 PUSHLIB	=	push_swap.a
 NAME	=	push_swap
 LIBFT	=	./libft
