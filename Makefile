@@ -17,8 +17,10 @@ SRCS	=	sources/list_operations/add_element.c\
             sources/push_swap_operations/reverse_rotate.c\
             sources/push_swap_operations/rotate.c\
             sources/push_swap_operations/swap.c\
+            sources/sort/bubble_sort.c\
             sources/sort/small_element_sort.c\
             sources/sort/sort_algorithm.c\
+            sources/sort/support_elements_for_quicksort.c\
             sources/sort/three_element_sort.c\
             sources/sort/two_element_sort.c\
             sources/errors.c\

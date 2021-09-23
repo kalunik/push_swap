@@ -21,7 +21,7 @@ void	small_element_sort(int argc, t_list **stack_a, t_list **stack_b)
 	while (count_droped_min < (argc - 3) - 1)
 	{
 		pos_of_min = element_position_in_list(find_min(*stack_a), *stack_a);
-		printf("%d-%d\n", find_min(*stack_a), pos_of_min);
+		//printf("%d-%d\n", find_min(*stack_a), pos_of_min);
 		element_to_top(argc - count_droped_min, pos_of_min, stack_a);
 		pb(stack_a, stack_b);
 		count_droped_min++;
