@@ -24,6 +24,7 @@ SRCS	=	sources/list_operations/add_element.c\
             sources/sort/three_element_sort.c\
             sources/sort/two_element_sort.c\
             sources/errors.c\
+            sources/fill_array.c\
             sources/push_swap.c
 
 OBJS	=	$(SRCS:.c=.o)
