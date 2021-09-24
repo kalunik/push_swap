@@ -6,7 +6,7 @@
 /*   By: wjonatho <wjonatho@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/14 13:41:47 by wjonatho          #+#    #+#             */
-/*   Updated: 2021/09/14 15:35:14 by wjonatho         ###   ########.fr       */
+/*   Updated: 2021/09/24 18:00:24 by wjonatho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	find_min(t_list *list)
 	return (min);
 }
 
-int	element_position_in_list(int value, t_list *list)
+int	element_pos_in_list(int value, t_list *list)
 {
 	int	position;
 	int	number;

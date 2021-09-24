@@ -6,7 +6,7 @@
 /*   By: wjonatho <wjonatho@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/23 17:41:04 by wjonatho          #+#    #+#             */
-/*   Updated: 2021/09/24 14:21:40 by wjonatho         ###   ########.fr       */
+/*   Updated: 2021/09/24 17:07:41 by wjonatho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,6 @@ int	*num_from_index(int *sorted_arr, int *sup_elem_index, int i)
 		sup_arr[j] = sorted_arr[sup_elem_index[j] - 1];
 		j++;
 	}
-	//print_array(sup_arr, j);
 	return (sup_arr);
 }
 
@@ -90,8 +89,10 @@ int	*find_support(int *sorted_arr, int n)
 	{
 		printf("%d - - chunk size\n", chunk_size);
 		sup_elem_index = find_sup_elem_index(chunk_size, n);
+		printf("sup elem index !!!\n");
 		print_array(sup_elem_index, n / chunk_size);
-		sup_arr = num_from_index(sorted_arr, sup_elem_index, n);
+		sup_arr = num_from_index(sorted_arr, sup_elem_index, n / chunk_size);
+		free(sup_elem_index);
 		printf("sup arr !!!\n");
 		print_array(sup_arr, n / chunk_size);
 		return (sup_arr);
@@ -110,5 +111,6 @@ int	*support_elements(int argc, char **argv)
 	bubble_sort(arr, argc - 1);
 	print_array(arr, argc - 1);
 	sup_arr = find_support(arr, argc - 1);
+	free(arr);
 	return (sup_arr);
 }

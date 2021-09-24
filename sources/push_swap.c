@@ -6,7 +6,7 @@
 /*   By: wjonatho <wjonatho@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/05 13:18:36 by wjonatho          #+#    #+#             */
-/*   Updated: 2021/09/24 13:57:19 by wjonatho         ###   ########.fr       */
+/*   Updated: 2021/09/24 17:10:59 by wjonatho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,10 @@ void	ft_filling_stack(int argc, char **argv)
 {
 	t_list	*stack_a;
 	t_list	*stack_b;
-	int	*sup;
 
 	stack_a = create_list(argc, argv);
 	//print_list(stack_a);
-	sup = support_elements(argc, argv);
-	//sort_algorithm(argc, &stack_a, &stack_b); //todo сортировка выключена
+	sorting(argc, argv, &stack_a, &stack_b);
 	//print_list(stack_a);
 }
 
