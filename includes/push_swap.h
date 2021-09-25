@@ -6,7 +6,7 @@
 /*   By: wjonatho <wjonatho@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/05 13:42:23 by wjonatho          #+#    #+#             */
-/*   Updated: 2021/09/24 17:45:04 by wjonatho         ###   ########.fr       */
+/*   Updated: 2021/09/25 17:42:06 by wjonatho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	bubble_sort(int arr[], int n);
 void	ft_qsort(int argc, char **argv, t_list **stack_a, t_list **stack_b);
 void	small_element_sort(int argc, t_list **stack_a, t_list **stack_b);
 void	sorting(int argc, char **argv, t_list **stack_a, t_list **stack_b);
-int		*support_elements(int argc, char **argv);
+void	*support_elements(int argc, char **argv, int **sup_arr);
 void	three_element_sort(t_list **stack_a);
 void	two_element_sort(t_list **stack_a);
 

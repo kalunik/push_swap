@@ -53,6 +53,7 @@ int main(int argc, char **argv)
 	return 0;
 }*/
 
+/*
 // C program for implementation of Bubble sort
 #include <stdio.h>
 #include "libft/libft.h"
@@ -99,7 +100,9 @@ void	bubbleSort(int arr[], int n)
 	}
 }
 
-/* Function to print an array */
+*/
+/* Function to print an array *//*
+
 void printArray(int arr[], int size)
 {
 	int i;
@@ -118,4 +121,43 @@ int	main(int argc, char **argv)
 	printf("Sorted array: \n");
 	printArray(arr, argc - 1);
 	return 0;
+}*/
+
+#include <stdlib.h>
+#include <stdio.h>
+
+void	print_array(int *arr, int n) //fixme запрещённая функция
+{
+	int	i;
+
+	i = 0;
+	printf("[index] - number\n________________\n");
+	while (i < n)
+	{
+		printf("[%d] – %d\n", i, arr[i]);
+		i++;
+	}
+	printf("________________\n");
+}
+
+void	*fill_arr(int **ptr)
+{
+	int	i;
+
+	i = 0;
+	*ptr = malloc(10 * sizeof(int));
+	while (i < 10)
+	{
+		(*ptr)[i] = i;
+		i++;
+	}
+	return (0);
+}
+
+int	main(void)
+{
+	int	*arr;
+
+	fill_arr(&arr);
+	print_array(arr, 10);
 }

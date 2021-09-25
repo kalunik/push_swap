@@ -6,7 +6,7 @@
 /*   By: wjonatho <wjonatho@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/23 17:41:04 by wjonatho          #+#    #+#             */
-/*   Updated: 2021/09/24 17:07:41 by wjonatho         ###   ########.fr       */
+/*   Updated: 2021/09/25 19:33:01 by wjonatho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,24 +63,24 @@ int	*find_sup_elem_index(int chunk_size, int n)
 	return (sup_elems_index);
 }
 
-int	*num_from_index(int *sorted_arr, int *sup_elem_index, int i)
+void	*num_from_index(int *sorted_arr, int *sup_elem_index, int i, int
+**sup_arr)
 {
 	int	j;
-	int	*sup_arr;
 
 	j = 0;
-	sup_arr = ft_calloc(i, sizeof(int));
+	*sup_arr = ft_calloc(i, sizeof(int));
 	while (j < i)
 	{
-		sup_arr[j] = sorted_arr[sup_elem_index[j] - 1];
+		(*sup_arr)[j] = sorted_arr[sup_elem_index[j] - 1];
 		j++;
 	}
-	return (sup_arr);
+	return (0);
 }
 
-int	*find_support(int *sorted_arr, int n)
+int	find_support(int *sorted_arr, int n, int **sup_arr)
 {
-	int	*sup_arr;
+	//int	*sup_arr;
 	int	*sup_elem_index;
 	int	chunk_size;
 
@@ -91,26 +91,25 @@ int	*find_support(int *sorted_arr, int n)
 		sup_elem_index = find_sup_elem_index(chunk_size, n);
 		printf("sup elem index !!!\n");
 		print_array(sup_elem_index, n / chunk_size);
-		sup_arr = num_from_index(sorted_arr, sup_elem_index, n / chunk_size);
+		num_from_index(sorted_arr, sup_elem_index, n / chunk_size, sup_arr);
 		free(sup_elem_index);
 		printf("sup arr !!!\n");
-		print_array(sup_arr, n / chunk_size);
-		return (sup_arr);
+		//print_array(sup_arr, n / chunk_size);
+		return (n / chunk_size);
 	}
 	return (0);
 }
 
-int	*support_elements(int argc, char **argv)
+int	support_elements(int argc, char **argv, int **sup_arr)
 {
 	int	i;
 	int	*arr;
-	int	*sup_arr;
+	int	count_chunks;
 
-	i = 0;
 	arr = fill_array(argc, argv);
 	bubble_sort(arr, argc - 1);
 	print_array(arr, argc - 1);
-	sup_arr = find_support(arr, argc - 1);
+	find_support(arr, argc - 1, sup_arr);
 	free(arr);
-	return (sup_arr);
+	return (count_chunks);
 }
