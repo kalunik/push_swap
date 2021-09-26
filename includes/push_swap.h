@@ -70,7 +70,7 @@ void	bubble_sort(int arr[], int n);
 void	ft_qsort(int argc, char **argv, t_list **stack_a, t_list **stack_b);
 void	small_element_sort(int argc, t_list **stack_a, t_list **stack_b);
 void	sorting(int argc, char **argv, t_list **stack_a, t_list **stack_b);
-void	*support_elements(int argc, char **argv, int **sup_arr);
+int		support_elements(int argc, char **argv, int **sup_arr);
 void	three_element_sort(t_list **stack_a);
 void	two_element_sort(t_list **stack_a);
 

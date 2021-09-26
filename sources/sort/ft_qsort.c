@@ -6,7 +6,7 @@
 /*   By: wjonatho <wjonatho@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 15:29:20 by wjonatho          #+#    #+#             */
-/*   Updated: 2021/09/25 18:43:02 by wjonatho         ###   ########.fr       */
+/*   Updated: 2021/09/26 21:12:56 by wjonatho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,11 @@ void	ft_qsort(int argc, char **argv, t_list **stack_a, t_list **stack_b)
 	int		count_elem_in_b;
 	int		pos_of_chunk;
 	int		i;
-	int	count_chunks;
+	int		count_chunks;
 
 	i = 0;
 	count_chunks = support_elements(argc, argv, &sup_arr); //todo free(sup_arr)
+	printf("count_chunks -- %d\n", count_chunks);
 	sort_flag_set(stack_a);
 	free(sup_arr);
 }

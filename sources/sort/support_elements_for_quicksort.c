@@ -6,7 +6,7 @@
 /*   By: wjonatho <wjonatho@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/23 17:41:04 by wjonatho          #+#    #+#             */
-/*   Updated: 2021/09/25 19:33:01 by wjonatho         ###   ########.fr       */
+/*   Updated: 2021/09/26 21:17:26 by wjonatho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,7 @@ int	*find_sup_elem_index(int chunk_size, int n)
 	return (sup_elems_index);
 }
 
-void	*num_from_index(int *sorted_arr, int *sup_elem_index, int i, int
-**sup_arr)
+void	*num_from_index(int *sorted, int *sup_elem_index, int i, int **sup_arr)
 {
 	int	j;
 
@@ -72,7 +71,7 @@ void	*num_from_index(int *sorted_arr, int *sup_elem_index, int i, int
 	*sup_arr = ft_calloc(i, sizeof(int));
 	while (j < i)
 	{
-		(*sup_arr)[j] = sorted_arr[sup_elem_index[j] - 1];
+		(*sup_arr)[j] = sorted[sup_elem_index[j] - 1];
 		j++;
 	}
 	return (0);
@@ -80,7 +79,6 @@ void	*num_from_index(int *sorted_arr, int *sup_elem_index, int i, int
 
 int	find_support(int *sorted_arr, int n, int **sup_arr)
 {
-	//int	*sup_arr;
 	int	*sup_elem_index;
 	int	chunk_size;
 
@@ -94,7 +92,7 @@ int	find_support(int *sorted_arr, int n, int **sup_arr)
 		num_from_index(sorted_arr, sup_elem_index, n / chunk_size, sup_arr);
 		free(sup_elem_index);
 		printf("sup arr !!!\n");
-		//print_array(sup_arr, n / chunk_size);
+		print_array(*sup_arr, n / chunk_size);
 		return (n / chunk_size);
 	}
 	return (0);
@@ -109,7 +107,7 @@ int	support_elements(int argc, char **argv, int **sup_arr)
 	arr = fill_array(argc, argv);
 	bubble_sort(arr, argc - 1);
 	print_array(arr, argc - 1);
-	find_support(arr, argc - 1, sup_arr);
+	count_chunks = find_support(arr, argc - 1, sup_arr);
 	free(arr);
 	return (count_chunks);
 }
