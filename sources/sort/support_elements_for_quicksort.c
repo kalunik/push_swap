@@ -6,7 +6,7 @@
 /*   By: wjonatho <wjonatho@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/23 17:41:04 by wjonatho          #+#    #+#             */
-/*   Updated: 2021/09/26 21:17:26 by wjonatho         ###   ########.fr       */
+/*   Updated: 2021/09/27 20:32:37 by wjonatho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,16 +98,11 @@ int	find_support(int *sorted_arr, int n, int **sup_arr)
 	return (0);
 }
 
-int	support_elements(int argc, char **argv, int **sup_arr)
+int	support_elements(int argc, char **argv, int *arr, int **sup_arr)
 {
-	int	i;
-	int	*arr;
 	int	count_chunks;
 
-	arr = fill_array(argc, argv);
-	bubble_sort(arr, argc - 1);
-	print_array(arr, argc - 1);
+	//print_array(arr, argc - 1);
 	count_chunks = find_support(arr, argc - 1, sup_arr);
-	free(arr);
 	return (count_chunks);
 }

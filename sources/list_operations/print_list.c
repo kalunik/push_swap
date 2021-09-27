@@ -6,7 +6,7 @@
 /*   By: wjonatho <wjonatho@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 17:14:49 by wjonatho          #+#    #+#             */
-/*   Updated: 2021/09/06 17:14:49 by wjonatho         ###   ########.fr       */
+/*   Updated: 2021/09/27 21:08:51 by wjonatho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,6 @@ void	print_list(t_list *head)
 		ft_putchar_fd('-', 1);
 		tmp = tmp->next;
 	}
+	ft_putnbr_fd(tmp->value, 1);
 	ft_putchar_fd('\n', 1);
 }

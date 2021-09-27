@@ -14,7 +14,7 @@
 
 void	sorting(int argc, char **argv, t_list **stack_a, t_list **stack_b)
 {
-	if (argc < 101)
+	/*if (argc < 101)
 	{
 		if (argc < 5)
 		{
@@ -29,7 +29,7 @@ void	sorting(int argc, char **argv, t_list **stack_a, t_list **stack_b)
 		}
 	}
 	else
-	{
+	{*/
 		if (argc < 501) //100 - 499 elem
 		{
 			ft_qsort(argc, argv, stack_a, stack_b);
@@ -38,5 +38,5 @@ void	sorting(int argc, char **argv, t_list **stack_a, t_list **stack_b)
 		{
 			small_element_sort(argc, stack_a, stack_b);
 		}
-	}
+	//}
 }

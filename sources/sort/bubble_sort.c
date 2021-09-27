@@ -6,7 +6,7 @@
 /*   By: wjonatho <wjonatho@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/23 17:41:45 by wjonatho          #+#    #+#             */
-/*   Updated: 2021/09/23 17:50:40 by wjonatho         ###   ########.fr       */
+/*   Updated: 2021/09/27 20:54:04 by wjonatho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void	swap(int *a, int *b)
 	*b = tmp;
 }
 
-void	bubble_sort(int arr[], int n)
+void	bubble_sort(int *arr, int n)
 {
 	int	i;
 	int	j;
