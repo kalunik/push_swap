@@ -6,7 +6,7 @@
 /*   By: wjonatho <wjonatho@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/05 13:18:36 by wjonatho          #+#    #+#             */
-/*   Updated: 2021/09/27 18:29:08 by wjonatho         ###   ########.fr       */
+/*   Updated: 2021/09/28 20:09:37 by wjonatho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,9 @@ void	ft_is_sorted(int argc, char **argv)
 		if (ft_atoi(argv[i]) > ft_atoi(argv[i + 1]))
 			unsorted_flag++;
 		i++;
-		write(1, &i, 2);
 	}
 	if (unsorted_flag == 0)
-		exit(0);
+		exit (0);
 }
 
 void	push_swap(int argc, char **argv)

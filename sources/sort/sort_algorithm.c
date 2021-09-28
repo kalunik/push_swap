@@ -6,7 +6,7 @@
 /*   By: wjonatho <wjonatho@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 17:24:59 by wjonatho          #+#    #+#             */
-/*   Updated: 2021/09/24 16:29:43 by wjonatho         ###   ########.fr       */
+/*   Updated: 2021/09/28 15:53:02 by wjonatho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	sorting(int argc, char **argv, t_list **stack_a, t_list **stack_b)
 {
-	/*if (argc < 101)
+	if (argc < 101)
 	{
 		if (argc < 5)
 		{
@@ -29,7 +29,7 @@ void	sorting(int argc, char **argv, t_list **stack_a, t_list **stack_b)
 		}
 	}
 	else
-	{*/
+	{
 		if (argc < 501) //100 - 499 elem
 		{
 			ft_qsort(argc, argv, stack_a, stack_b);
@@ -38,5 +38,5 @@ void	sorting(int argc, char **argv, t_list **stack_a, t_list **stack_b)
 		{
 			small_element_sort(argc, stack_a, stack_b);
 		}
-	//}
+	}
 }
