@@ -6,7 +6,7 @@
 /*   By: wjonatho <wjonatho@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 18:26:00 by wjonatho          #+#    #+#             */
-/*   Updated: 2021/09/08 18:21:35 by wjonatho         ###   ########.fr       */
+/*   Updated: 2021/09/29 20:39:20 by wjonatho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,25 @@
 
 static void	rotate(t_list **head)
 {
-	if (*head)
+	/*if (*head)
 	{
 		add_element_end((*head)->value, (*head));
 		remove_first_element(head);
-	}
+	}*/
+	t_list	*second;
+	t_list	*last;
+	t_list	*tmp;
+
+	if ((*head) == NULL || (*head)->next == NULL)
+		return ;
+	second = (*head)->next;
+	last = *head;
+	tmp = *head;
+	while (last->next != NULL)
+		last = last->next;
+	*head = second;
+	last->next = tmp;
+	tmp->next = NULL;
 }
 
 void	ra(t_list **stack_a)

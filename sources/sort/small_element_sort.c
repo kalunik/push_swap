@@ -6,7 +6,7 @@
 /*   By: wjonatho <wjonatho@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/15 16:59:03 by wjonatho          #+#    #+#             */
-/*   Updated: 2021/09/27 17:16:47 by wjonatho         ###   ########.fr       */
+/*   Updated: 2021/09/29 18:30:07 by wjonatho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	small_element_sort(int argc, t_list **stack_a, t_list **stack_b)
 	count_droped_min = 0;
 	while (count_droped_min < (argc - 3) - 1)
 	{
-		pos_of_min = element_pos_in_list(find_min(*stack_a), *stack_a);
+		pos_of_min = elem_pos_in_list(find_min(*stack_a), *stack_a);
 		//printf("%d-%d\n", find_min(*stack_a), pos_of_min);
 		element_to_top(argc - count_droped_min, pos_of_min, stack_a);
 		pb(stack_a, stack_b);

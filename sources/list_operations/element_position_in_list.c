@@ -44,7 +44,7 @@ int	find_min(t_list *list)
 	return (min);
 }
 
-int	element_pos_in_list(int value, t_list *list)
+int	elem_pos_in_list(int value, t_list *list)
 {
 	int	position;
 	int	number;
