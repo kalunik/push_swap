@@ -6,19 +6,25 @@
 /*   By: wjonatho <wjonatho@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 17:59:15 by wjonatho          #+#    #+#             */
-/*   Updated: 2021/09/08 18:09:09 by wjonatho         ###   ########.fr       */
+/*   Updated: 2021/09/30 18:00:12 by wjonatho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	push_1st_from_src_stack_to_dst(t_list **src, t_list **dst)
+/*static void	push_1st_from_src_stack_to_dst(t_list **src, t_list **dst)
 {
-	if (*dst)
+	*//*if (*dst)
 		(*dst) = add_element_start((*src)->value, (*dst));
 	else
 		(*dst) = create_first_element((*src)->value);
-	remove_first_element(src);
+	remove_first_element(src);*//*
+	t_list	*tmp;
+
+	tmp = *src;
+	*src = tmp->next;
+	tmp->next = *dst;
+	*dst = tmp;
 }
 
 void	pa(t_list **stack_b, t_list **stack_a)
@@ -31,8 +37,33 @@ void	pb(t_list **stack_a, t_list **stack_b)
 {
 	push_1st_from_src_stack_to_dst(stack_a, stack_b);
 	write(1, "pb\n", 3);
+}*/
+
+void	pa(t_list **stack_b, t_list **stack_a)
+{
+	t_list	*tmp;
+
+	tmp = *stack_b;
+	*stack_b = tmp->next;
+	tmp->next = *stack_a;
+	*stack_a = tmp;
+	write(1, "pa\n", 3);
 }
 
+void	pb(t_list **stack_a, t_list **stack_b)
+{
+	t_list	*tmp;
+
+	/*if (!(*stack_b))
+	{
+		*stack_b = NULL;
+	}*/
+	tmp = *stack_a;
+	*stack_a = tmp->next;
+	tmp->next = *stack_b;
+	*stack_b = tmp;
+	write(1, "pb\n", 3);
+}
 /*
 int		main()
 {

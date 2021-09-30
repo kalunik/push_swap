@@ -14,7 +14,7 @@
 
 static void	reverse_rotate(t_list **head)
 {
-	t_list	*buf;
+/*	t_list	*buf;
 	size_t	len;
 	size_t	i;
 
@@ -30,7 +30,17 @@ static void	reverse_rotate(t_list **head)
 		}
 		(*head) = add_element_start(buf->value, (*head));
 		remove_last_element(head);
-	}
+	}*/
+	t_list	*tmp;
+	t_list	*tmp1;
+
+	tmp = *head;
+	tmp1 = tmp;
+	while (tmp->next->next)
+		tmp = tmp->next;
+	*head = tmp->next;
+	tmp->next = NULL;
+	(*head)->next = tmp1;
 }
 
 void	rra(t_list **stack_a)

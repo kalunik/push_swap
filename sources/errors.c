@@ -6,7 +6,7 @@
 /*   By: wjonatho <wjonatho@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/05 13:42:08 by wjonatho          #+#    #+#             */
-/*   Updated: 2021/09/07 16:03:01 by wjonatho         ###   ########.fr       */
+/*   Updated: 2021/09/30 20:34:13 by wjonatho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,23 +56,39 @@ static int	ft_dublicates(int *o, int argc, char **argv)
 	return (0);
 }
 
+static int	ft_is_sorted(int argc, char **argv)
+{
+	int	i;
+	int	unsorted_flag;
+
+	i = 1;
+	unsorted_flag = 0;
+	while (i < argc - 1)
+	{
+		//printf("[%d] > [%d]\n", i, i + 1);
+		if (ft_atoi(argv[i]) > ft_atoi(argv[i + 1]))
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
 void	errors(int argc, char **argv)
 {
 	int	i;
 	int	j;
-	int	bool;
 
 	i = 1;
 	j = 0;
 	while (i < argc)
 	{
-		bool = ft_not_a_number(&i, &j, argv);
-		if (bool)
+		if (ft_not_a_number(&i, &j, argv))
 			exit(0);
-		bool = ft_dublicates(&i, argc, argv);
-		if (bool)
+		if (ft_dublicates(&i, argc, argv))
 			exit(0);
 		i++;
 		j = 0;
 	}
+	if (ft_is_sorted(argc, argv))
+		exit(0);
 }

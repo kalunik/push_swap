@@ -6,7 +6,7 @@
 /*   By: wjonatho <wjonatho@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 15:29:20 by wjonatho          #+#    #+#             */
-/*   Updated: 2021/09/29 20:48:09 by wjonatho         ###   ########.fr       */
+/*   Updated: 2021/09/30 22:23:17 by wjonatho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,16 +84,47 @@ void	index_set(t_list **head, int *sorted_arr, int arr_size)
 	(*head) = tmp;
 }
 
+
+static int	find_max_index(t_list *list)
+{
+	int	max;
+	int	number;
+
+	max = list->index;
+	while (list)
+	{
+		number = list->index;
+		if (number > max)
+			max = number;
+		list = list->next;
+	}
+	return (max);
+}
+
 static int	position_of_max(t_list *head)
 {
-	return (elem_pos_in_list(find_max(head), head));
+	return (elem_pos_in_list(find_max_index(head) + 1, head));
+}
+
+static int	elem_start_or_end(t_list *head)
+{
+	if (position_of_max(head) > ft_listlen(head) / 2)
+		return (1);
+	return (0);
 }
 
 void	searching_in_stack_b(t_list **stack_a, t_list **st_b)
 {
+	int	start_or_end;
+	int	max_index;
+
 	while (*st_b)
 	{
-		if ((*st_b)->index == position_of_max(*st_b))
+		start_or_end = elem_start_or_end(*st_b);
+		max_index = find_max_index(*st_b);
+//		print_list(*st_b);
+//		printf("%d - start(0)/end(1) || max index - %d\n", start_or_end, max_index);
+	/*	if ((*st_b)->index == find_max_index(*st_b))
 			pa(st_b, stack_a);
 		else
 		{
@@ -101,7 +132,13 @@ void	searching_in_stack_b(t_list **stack_a, t_list **st_b)
 				rrb(st_b);
 			else
 				rb(st_b);
-		}
+		}*/
+		if ((*st_b)->index != max_index && !start_or_end)
+			rb(st_b);
+		else if ((*st_b)->index != max_index && start_or_end)
+			rrb(st_b);
+		else if ((*st_b)->index == max_index)
+			pa(st_b, stack_a);
 		//(*st_b) = (*st_b)->next;
 	}
 }
@@ -115,14 +152,13 @@ void	searching_in_stack_a(int argc, t_list **stack_a, t_list **stack_b)
 	if (argc >= 250)
 		chunk = 30;
 	else
-		chunk = 15;
+		chunk = 15; //fixme
 	while (*stack_a)
 	{
-		printf("%d --- index || search --- %d\n", (*stack_a)->index, searching_index);
-		print_list(*stack_a);
-		if ((*stack_a)->index > searching_index) //убрал =
-			ra(stack_a);
-		else if ((*stack_a)->index <= searching_index && searching_index > 1)
+	//printf("%d --- index || search --- %d\n", (*stack_a)->index,
+	//			searching_index);
+	//print_list(*stack_a);
+		if ((*stack_a)->index <= searching_index && searching_index > 1)
 		{
 			pb(stack_a, stack_b);
 			searching_index++;
@@ -133,28 +169,10 @@ void	searching_in_stack_a(int argc, t_list **stack_a, t_list **stack_b)
 			pb(stack_a, stack_b);
 			searching_index++;
 		}
+		else if ((*stack_a)->index >= searching_index) //убрал =
+			ra(stack_a);
 	}
-	searching_in_stack_b(stack_a, stack_b);
-}
-
-void	do_sort_500(t_list **a, t_list **b)
-{
-	int	l;
-
-	l = 0;
-	while ((*a) != NULL)
-	{
-		if ((*a)->index <= l && l > 1 )
-		{
-			pb(a, b), l++;
-			rb(b);
-		}
-		else if ((*a)->index <= l + 30)
-			pb(a, b), l++;
-		else if ((*a)->index >= l)
-			ra(a);
-	}
-	searching_in_stack_b(a, b);
+	//print_list(*stack_b);
 }
 
 void	big_elem_srt(int argc, char **argv, t_list **stack_a, t_list **stack_b)
@@ -164,7 +182,11 @@ void	big_elem_srt(int argc, char **argv, t_list **stack_a, t_list **stack_b)
 	arr = fill_array(argc, argv);
 	bubble_sort(arr, argc - 1);
 	index_set(stack_a, arr, argc - 1);
-	//do_sort_500(stack_a, stack_b);
+	//printf("%d --- index || search --- %d\n", (*a)->index, l);
+	//print_list(*stack_a);
+	//printf("%d --- index || search --- %d\n", (*a)->index, l);
+	//print_list(*stack_b);
 	searching_in_stack_a(argc, stack_a, stack_b);
-//	searching_in_stack_b(stack_a, stack_b);
+	searching_in_stack_b(stack_a, stack_b);
+	//print_list(*stack_a);
 }
