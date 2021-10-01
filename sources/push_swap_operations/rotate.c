@@ -6,13 +6,13 @@
 /*   By: wjonatho <wjonatho@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 18:26:00 by wjonatho          #+#    #+#             */
-/*   Updated: 2021/10/01 14:51:38 by wjonatho         ###   ########.fr       */
+/*   Updated: 2021/10/01 22:04:49 by wjonatho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	rotate(t_list **head)
+void	rotate(t_list **head)
 {
 	t_list	*previous;
 	t_list	*last;

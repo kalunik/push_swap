@@ -24,14 +24,10 @@ void	sorting(int argc, char **argv, t_list **stack_a, t_list **stack_b)
 				three_element_sort(stack_a);
 		}
 		else
-		{
 			small_element_sort(argc, stack_a, stack_b);
-		}
 	}
 	else
-	{
 		big_elem_srt(argc, argv, stack_a, stack_b);
-	}
 	remove_all_elements(*stack_a);
 	remove_all_elements(*stack_b);
 }

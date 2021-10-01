@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	index_set(t_list **head, int *sorted_arr, int arr_size)
+static void	index_set(t_list **head, const int *sorted_arr, int arr_size)
 {
 	t_list	*tmp;
 	int		i;
@@ -35,8 +35,6 @@ void	index_set(t_list **head, int *sorted_arr, int arr_size)
 	(*head) = tmp;
 }
 
-
-
 static int	elem_start_or_end(int len_of_stack, t_list *head)
 {
 	if (index_pos_in_list(find_max_index(head), head) > len_of_stack / 2)
@@ -44,7 +42,7 @@ static int	elem_start_or_end(int len_of_stack, t_list *head)
 	return (0);
 }
 
-void	searching_in_stack_b(int argc, t_list **stack_a, t_list **st_b)
+static void	searching_in_stack_b(int argc, t_list **stack_a, t_list **st_b)
 {
 	int	start_or_end;
 	int	max_index;
@@ -68,7 +66,7 @@ void	searching_in_stack_b(int argc, t_list **stack_a, t_list **st_b)
 	}
 }
 
-void	searching_in_stack_a(int argc, t_list **stack_a, t_list **stack_b)
+static void	searching_in_stack_a(int argc, t_list **stack_a, t_list **stack_b)
 {
 	int	chunk;
 	int	searching_index;

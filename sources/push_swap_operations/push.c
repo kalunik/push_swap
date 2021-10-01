@@ -6,13 +6,13 @@
 /*   By: wjonatho <wjonatho@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 17:59:15 by wjonatho          #+#    #+#             */
-/*   Updated: 2021/10/01 15:20:28 by wjonatho         ###   ########.fr       */
+/*   Updated: 2021/10/01 22:04:49 by wjonatho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	push_1st_from_src_stack_to_dst(t_list **src, t_list **dst)
+void	push_1st_from_src_stack_to_dst(t_list **src, t_list **dst)
 {
 	t_list	*tmp;
 

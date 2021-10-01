@@ -6,13 +6,13 @@
 /*   By: wjonatho <wjonatho@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/05 13:42:08 by wjonatho          #+#    #+#             */
-/*   Updated: 2021/10/01 18:26:42 by wjonatho         ###   ########.fr       */
+/*   Updated: 2021/10/01 22:04:49 by wjonatho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	ft_not_a_number(int *o, int *k, char **argv)
+static inline int	ft_not_a_number(int *o, int *k, char **argv)
 {
 	int	i;
 	int	j;
@@ -33,7 +33,7 @@ static int	ft_not_a_number(int *o, int *k, char **argv)
 	return (0);
 }
 
-static int	ft_dublicates(int *o, int argc, char **argv)
+static inline int	ft_dublicates(int *o, int argc, char **argv)
 {
 	int	i;
 	int	j;
@@ -53,7 +53,7 @@ static int	ft_dublicates(int *o, int argc, char **argv)
 	return (0);
 }
 
-static int	ft_is_sorted(int argc, char **argv)
+static inline int	ft_is_sorted(int argc, char **argv)
 {
 	int	i;
 

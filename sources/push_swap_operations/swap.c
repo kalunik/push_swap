@@ -6,13 +6,13 @@
 /*   By: wjonatho <wjonatho@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/05 19:28:56 by wjonatho          #+#    #+#             */
-/*   Updated: 2021/09/08 18:26:45 by wjonatho         ###   ########.fr       */
+/*   Updated: 2021/10/01 22:04:49 by wjonatho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	swap_1st_two_elements(t_list **head)
+void	swap_1st_two_elements(t_list **head)
 {
 	t_list	*first;
 	t_list	*second;

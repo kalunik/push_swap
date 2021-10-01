@@ -6,7 +6,7 @@
 /*   By: wjonatho <wjonatho@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/05 19:06:48 by wjonatho          #+#    #+#             */
-/*   Updated: 2021/10/01 17:50:01 by wjonatho         ###   ########.fr       */
+/*   Updated: 2021/10/01 22:04:49 by wjonatho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,14 +39,7 @@ void	remove_last_element(t_list **head)
 	if (*head)
 	{
 		j = 1;
-		/*buf = (*head);
-		while (buf)
-		{
-			buf = buf->next;
-			i++;
-		}
-		//free(buf); //todo вероятно вместо free надо buf = NULL*/
-		len = ft_listlen(*head);
+		len = (int)ft_listlen(*head);
 		buf = (*head);
 		while (j <= len - 2)
 		{
@@ -59,14 +52,3 @@ void	remove_last_element(t_list **head)
 		buf->next = NULL;
 	}
 }
-
-/*int    main()
-{
-	t_list    *src;
-
-	src = create_first_element(2);
-	add_element_end(52, src);
-	add_element_end(100, src);
-	remove_last_element(&src);
-}//fixme delete comments
- */
