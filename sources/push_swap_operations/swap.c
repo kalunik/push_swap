@@ -42,19 +42,3 @@ void	ss(t_list **stack_a, t_list **stack_b)
 	swap_1st_two_elements(stack_b);
 	write(1, "ss\n", 3);
 }
-
-/*
-int		main()
-{
-	t_list	*test;
-
-	test = create_first_element(2);
-	add_element_end(52, test);
-	add_element_end(100, test);
-	print_list(test);
-	swap_first_two_elements(&test);
-	print_list(test);
-	return (0);
-}
- fixme delete comment
- */
