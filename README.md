@@ -25,4 +25,4 @@ Sort numbers with minimum command usage. \
 3. You can download a [visualizer](https://github.com/o-reo/push_swap_visualizer).
 
 #### Example
-![100 operations algorithm](https://tenor.com/view/gif-23298903)
+![100 operations algorithm](gif/100.gif)
