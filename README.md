@@ -24,3 +24,5 @@ Sort numbers with minimum command usage. \
    ./push_swap ruby -e &#96;"puts (-249..250).to_a.shuffle.join(' ')"&#96;
 3. You can download a [visualizer](https://github.com/o-reo/push_swap_visualizer).
 
+#### Example
+![100 operations algorithm](https://tenor.com/view/gif-23298903)
