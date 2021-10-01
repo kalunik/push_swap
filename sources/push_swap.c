@@ -6,7 +6,7 @@
 /*   By: wjonatho <wjonatho@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/05 13:18:36 by wjonatho          #+#    #+#             */
-/*   Updated: 2021/09/30 20:36:44 by wjonatho         ###   ########.fr       */
+/*   Updated: 2021/10/01 18:17:13 by wjonatho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,31 +22,8 @@ void	ft_filling_stack(int argc, char **argv)
 	sorting(argc, argv, &stack_a, &stack_b);
 }
 
-void	ft_is_sorted(int argc, char **argv)
-{
-	int	i;
-	int	unsorted_flag;
-
-	i = 1;
-	unsorted_flag = 0;
-	while (i < argc - 2)
-	{
-		printf("[%d] > [%d]\n", i, i + 1);
-		if (ft_atoi(argv[i]) > ft_atoi(argv[i + 1]))
-			unsorted_flag++;
-		i++;
-	}
-}
-
 void	push_swap(int argc, char **argv)
 {
-//	int	count_arg;
-
 	errors(argc, argv);
-	//printf("argc - %d\n", argc);
-//	count_arg = argc - 2;
-	/*ft_is_sorted(argc, argv);*/
-	//printf("argv - %s\n", argv[argc]);
-	ft_filling_stack(argc, argv);//todo проверить как заполняется структура
-	// так как странно что пропадает null в stack_b
+	ft_filling_stack(argc, argv);
 }

@@ -6,7 +6,7 @@
 /*   By: wjonatho <wjonatho@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/05 13:42:23 by wjonatho          #+#    #+#             */
-/*   Updated: 2021/09/29 20:39:20 by wjonatho         ###   ########.fr       */
+/*   Updated: 2021/10/01 18:26:42 by wjonatho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,9 @@ t_list	*create_first_element(int data);
 t_list	*create_list(int argc, char **argv);
 
 int		find_max(t_list *list);
+int		find_max_index(t_list *list);
 int		find_min(t_list *list);
+int		index_pos_in_list(int value, t_list *list);
 int		elem_pos_in_list(int value, t_list *list);
 
 void	element_to_top(int argc, int position_of_element, t_list **list);
@@ -59,19 +61,16 @@ void	sa(t_list **stack_a);
 void	sb(t_list **stack_b);
 void	ss(t_list **stack_a, t_list **stack_b);
 
-void	errors(int argc, char **argv);
-
-int		*fill_array(int argc, char **argv);
-
-void	ft_filling_stack(int argc, char **argv);
-void	push_swap(int argc, char **argv);
-
 void	big_elem_srt(int argc, char **argv, t_list **stack_a, t_list **stack_b);
 void	bubble_sort(int *arr, int n);
 void	small_element_sort(int argc, t_list **stack_a, t_list **stack_b);
-void	sorting(int argc, char **argv, t_list **stack_a, t_list **stack_b);
-int		support_elements(int argc, char **argv, int *arr, int **sup_arr);
 void	three_element_sort(t_list **stack_a);
 void	two_element_sort(t_list **stack_a);
+
+void	errors(int argc, char **argv);
+int		*fill_array(int argc, char **argv);
+void	ft_filling_stack(int argc, char **argv);
+void	push_swap(int argc, char **argv);
+void	sorting(int argc, char **argv, t_list **stack_a, t_list **stack_b);
 
 #endif

@@ -28,6 +28,22 @@ int	find_max(t_list *list)
 	return (max);
 }
 
+int	find_max_index(t_list *list)
+{
+	int	max;
+	int	number;
+
+	max = list->index;
+	while (list)
+	{
+		number = list->index;
+		if (number > max)
+			max = number;
+		list = list->next;
+	}
+	return (max);
+}
+
 int	find_min(t_list *list)
 {
 	int	min;
@@ -42,6 +58,23 @@ int	find_min(t_list *list)
 		list = list->next;
 	}
 	return (min);
+}
+
+int	index_pos_in_list(int value, t_list *list)
+{
+	int	position;
+	int	number;
+
+	position = 1;
+	while (list)
+	{
+		number = list->index;
+		if (value == number)
+			return (position);
+		list = list->next;
+		position++;
+	}
+	return (0);
 }
 
 int	elem_pos_in_list(int value, t_list *list)

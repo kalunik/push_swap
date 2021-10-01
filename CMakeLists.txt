@@ -90,15 +90,14 @@ add_executable(
         sources/push_swap_operations/reverse_rotate.c
         sources/push_swap_operations/rotate.c
         sources/push_swap_operations/swap.c
-        sources/sort/big_element_sort.c
-        sources/sort/bubble_sort.c
-        sources/sort/small_element_sort.c
-        sources/sort/sort_algorithm.c
-        sources/sort/support_elements_for_quicksort.c
-        sources/sort/three_element_sort.c
-        sources/sort/two_element_sort.c
+        sources/sort_supply/big_element_sort.c
+        sources/sort_supply/bubble_sort.c
+        sources/sort_supply/small_element_sort.c
+        sources/sort_supply/three_element_sort.c
+        sources/sort_supply/two_element_sort.c
         sources/errors.c
         sources/fill_array.c
         sources/push_swap.c
+        sources/sort_algorithm.c
         main.c
 )

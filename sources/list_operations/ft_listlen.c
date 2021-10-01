@@ -26,4 +26,3 @@ size_t	ft_listlen(t_list *head)
 	}
 	return (len);
 }
-

@@ -6,7 +6,7 @@
 /*   By: wjonatho <wjonatho@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/05 19:06:48 by wjonatho          #+#    #+#             */
-/*   Updated: 2021/09/11 18:17:34 by wjonatho         ###   ########.fr       */
+/*   Updated: 2021/10/01 17:50:01 by wjonatho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,10 @@
 
 void	remove_all_elements(t_list *head)
 {
-	t_list	*tmp;
-
-	tmp = head;
-	while (head)
-	{
-		head = head->next;
-		free(tmp);
-	}
+	if (!head)
+		return ;
+	remove_all_elements(head->next);
+	free(head);
 }
 
 void	remove_first_element(t_list **head)

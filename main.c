@@ -14,7 +14,6 @@
 
 int	main(int argc, char **argv)
 {
-	//printf("\n%d", argc);
 	push_swap(argc, argv);
 	return (0);
 }

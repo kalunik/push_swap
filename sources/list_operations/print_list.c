@@ -19,7 +19,7 @@ void	print_list(t_list *head)
 	tmp = head;
 	while (tmp)
 	{
-		ft_putnbr_fd(tmp->index, 1);
+		ft_putnbr_fd(tmp->value, 1);
 		ft_putchar_fd('-', 1);
 		tmp = tmp->next;
 	}

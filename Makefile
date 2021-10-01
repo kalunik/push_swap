@@ -1,11 +1,8 @@
 CC	=	gcc
 RM	=	rm -f
-CFLAGS	=	-I./includes #-Wall -Wextra -Werror -I./includes
-PUSHLIB	=	push_swap.a
+CFLAGS	=	-I./includes -Wall -Wextra -Werror
 NAME	=	push_swap
 LIBFT	=	./libft
-LIBR	=	ar rcs
-MAIN	=	main.c
 SRCS	=	sources/list_operations/add_element.c\
             sources/list_operations/create_list.c\
             sources/list_operations/element_position_in_list.c\
@@ -17,44 +14,40 @@ SRCS	=	sources/list_operations/add_element.c\
             sources/push_swap_operations/reverse_rotate.c\
             sources/push_swap_operations/rotate.c\
             sources/push_swap_operations/swap.c\
-            sources/sort/bubble_sort.c\
-            sources/sort/big_element_sort.c\
-            sources/sort/small_element_sort.c\
-            sources/sort/sort_algorithm.c\
-            sources/sort/support_elements_for_quicksort.c\
-            sources/sort/three_element_sort.c\
-            sources/sort/two_element_sort.c\
+            sources/sort_supply/bubble_sort.c\
+            sources/sort_supply/big_element_sort.c\
+            sources/sort_supply/small_element_sort.c\
+            sources/sort_supply/three_element_sort.c\
+            sources/sort_supply/two_element_sort.c\
             sources/errors.c\
             sources/fill_array.c\
-            sources/push_swap.c
+            sources/push_swap.c\
+            sources/sort_algorithm.c\
+            main.c
 
-OBJS	=	$(SRCS:.c=.o)
+OBJS	=	$(patsubst %.c, %.o, $(SRCS))
 
 all:
-			$(MAKE) -C $(LIBFT)
-			$(MAKE) $(PUSHLIB)
-			$(MAKE) $(NAME)
+			@$(MAKE) -C $(LIBFT)
+			@$(MAKE) $(NAME)
 
-$(NAME):
-			@$(CC) -o $(NAME) $(PUSHLIB) $(MAIN)
-			@echo "push_swap is ready to use"
-
-$(PUSHLIB):		$(OBJS) $(LIBFT)/libft.a
-			@cp $(LIBFT)/libft.a ./$(PUSHLIB)
-			@$(LIBR) $(PUSHLIB) $(OBJS)
+$(NAME):	$(OBJS)
+			@$(CC) -o $(NAME) $(OBJS) $(LIBFT)/libft.a
+			@echo "push_swap is ready to use 😀"
 
 %.o: %.c
 			@$(CC) $(CFLAGS) -c $< -o $@
 
+
 clean:
 			@$(MAKE) -C $(LIBFT)/ clean
 			@$(RM)	$(OBJS)
-			@echo ".o Deleted"
+			@echo ".o Deleted 🙄"
 
 fclean: 	clean
 			@$(MAKE) -C $(LIBFT)/ fclean
-			@$(RM)	$(PUSHLIB) $(NAME)
-			@echo "Deleted"
+			@$(RM)	 $(NAME)
+			echo "Deleted 😬"
 
 re:			fclean all
 
