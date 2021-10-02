@@ -63,4 +63,4 @@ add_executable(
         sources/push_swap.c
         sources/sort_algorithm.c
         main.c
-)
+        checker_srcs_src/checker.c includes/checker.h checker_srcs/ft_long_atoi.c)

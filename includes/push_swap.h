@@ -6,7 +6,7 @@
 /*   By: wjonatho <wjonatho@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/05 13:42:23 by wjonatho          #+#    #+#             */
-/*   Updated: 2021/10/01 23:10:31 by wjonatho         ###   ########.fr       */
+/*   Updated: 2021/10/02 21:10:08 by wjonatho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,13 @@
 # include <stdio.h>
 # include <unistd.h>
 # include "../libft/libft.h"
+# include "../get_next_line/get_next_line.h"
 
 typedef struct s_Node{
-	int				value;
 	struct s_Node	*next;
+	int				value;
 	int				index;
-}			t_list;
+}	t_list;
 
 t_list	*add_element_start(int data, t_list *head);
 void	add_element_end(int data, t_list *head);
@@ -71,5 +72,8 @@ void	errors(int argc, char **argv);
 int		*fill_array(int argc, char **argv);
 void	push_swap(int argc, char **argv);
 void	sorting(int argc, char **argv, t_list **stack_a, t_list **stack_b);
+
+void	checker(int argc, char **argv);
+__int64_t	ft_long_atoi(const char *str);
 
 #endif
