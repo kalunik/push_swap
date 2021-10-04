@@ -6,7 +6,7 @@
 /*   By: wjonatho <wjonatho@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/05 13:42:23 by wjonatho          #+#    #+#             */
-/*   Updated: 2021/10/04 19:01:34 by wjonatho         ###   ########.fr       */
+/*   Updated: 2021/10/04 19:03:08 by wjonatho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,17 +46,21 @@ void		remove_all_elements(t_list *head);
 void		remove_first_element(t_list **head);
 void		remove_last_element(t_list **head);
 
+void		push_1st_from_src_stack_to_dst(t_list **src, t_list **dst);
 void		pa(t_list **stack_b, t_list **stack_a);
 void		pb(t_list **stack_a, t_list **stack_b);
 
+void		reverse_rotate(t_list **head);
 void		rra(t_list **stack_a);
 void		rrb(t_list **stack_b);
 void		rrr(t_list **stack_a, t_list **stack_b);
 
+void		rotate(t_list **head);
 void		ra(t_list **stack_a);
 void		rb(t_list **stack_b);
 void		rr(t_list **stack_a, t_list **stack_b);
 
+void		swap_1st_two_elements(t_list **head);
 void		sa(t_list **stack_a);
 void		sb(t_list **stack_b);
 void		ss(t_list **stack_a, t_list **stack_b);

@@ -62,5 +62,20 @@ add_executable(
         sources/fill_array.c
         sources/push_swap.c
         sources/sort_algorithm.c
-        main.c
-        checker_srcs_src/checker.c includes/checker.h sources/ft_long_atoi.c)
+        sources/ft_long_atoi.c
+        main.c)
+
+add_executable(
+        checker
+        sources/list_operations/ft_listlen.c
+        sources/list_operations/add_element.c
+        sources/list_operations/create_list.c
+        sources/push_swap_operations/push.c
+        sources/push_swap_operations/reverse_rotate.c
+        sources/push_swap_operations/rotate.c
+        sources/push_swap_operations/swap.c
+        checker_srcs/checker.c
+        sources/ft_long_atoi.c
+        get_next_line/get_next_line.c
+        get_next_line/get_next_line_utils.c
+)

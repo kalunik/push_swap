@@ -1,6 +1,6 @@
 CC	=	gcc
 RM	=	rm -f
-CFLAGS	=	-I./includes -Wall -Wextra -Werror
+CFLAGS	=	-I./includes #-Wall -Wextra -Werror
 NAME	=	push_swap
 B_NAME	=	checker
 LIBFT	=	./libft
@@ -26,11 +26,19 @@ SRCS	=	sources/list_operations/add_element.c\
             sources/push_swap.c\
             sources/sort_algorithm.c\
             main.c
-B_SRCS	=	checker_srcs/checker.c\
+B_SRCS	=	sources/list_operations/ft_listlen.c\
+            sources/list_operations/add_element.c\
+            sources/list_operations/create_list.c\
+            sources/push_swap_operations/push.c\
+            sources/push_swap_operations/reverse_rotate.c\
+            sources/push_swap_operations/rotate.c\
+            sources/push_swap_operations/swap.c\
+            checker_srcs/checker.c\
             sources/ft_long_atoi.c\
             get_next_line/get_next_line.c\
             get_next_line/get_next_line_utils.c\
-            sources/errors.c
+            sources/errors.c\
+            sources/list_operations/print_list.c
 
 OBJS	=	$(patsubst %.c, %.o, $(SRCS))
 
