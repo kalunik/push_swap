@@ -94,14 +94,14 @@ static void	searching_in_stack_a(int argc, t_list **stack_a, t_list **stack_b)
 	}
 }
 
-void	big_elem_srt(int argc, char **argv, t_list **stack_a, t_list **stack_b)
+void	big_elem_srt(int argc, char **argv, t_list **st_a, t_list **st_b)
 {
 	int	*arr;
 
 	arr = fill_array(argc, argv);
 	bubble_sort(arr, argc - 1);
-	index_set(stack_a, arr, argc - 1);
+	index_set(st_a, arr, argc - 1);
 	free(arr);
-	searching_in_stack_a(argc, stack_a, stack_b);
-	searching_in_stack_b(argc, stack_a, stack_b);
+	searching_in_stack_a(argc, st_a, st_b);
+	searching_in_stack_b(argc, st_a, st_b);
 }

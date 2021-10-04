@@ -17,6 +17,8 @@ t_list	*create_first_element(int data)
 	t_list	*node;
 
 	node = malloc(sizeof(t_list));
+	if (node == NULL)
+		exit(0);
 	node->value = data;
 	node->next = NULL;
 	return (node);

@@ -12,6 +12,16 @@
 
 #include "push_swap.h"
 
+static inline int	ft_overfilling(int i, char **argv)
+{
+	if (ft_atoi(argv[i]) != ft_long_atoi(argv[i]))
+	{
+		ft_putstr_fd("Error\n", 1);
+		return (1);
+	}
+	return (0);
+}
+
 static inline int	ft_not_a_number(int *o, int *k, char **argv)
 {
 	int	i;
@@ -76,6 +86,8 @@ void	errors(int argc, char **argv)
 	j = 0;
 	while (i < argc)
 	{
+		if (ft_overfilling(i, argv))
+			exit(0);
 		if (ft_not_a_number(&i, &j, argv))
 			exit(0);
 		if (ft_dublicates(&i, argc, argv))

@@ -19,6 +19,8 @@ int	*fill_array(int argc, char **argv)
 
 	i = 1;
 	arr = ft_calloc(argc, sizeof(int));
+	if (arr == NULL)
+		exit(0);
 	while (i < argc)
 	{
 		arr[i - 1] = ft_atoi(argv[i]);
