@@ -6,7 +6,7 @@
 /*   By: wjonatho <wjonatho@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/02 18:34:09 by wjonatho          #+#    #+#             */
-/*   Updated: 2021/10/04 22:18:37 by wjonatho         ###   ########.fr       */
+/*   Updated: 2021/10/05 18:59:05 by wjonatho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,17 +114,23 @@ void	checker(int argc, char **argv)
 	t_list	*stack_a;
 	t_list	*stack_b;
 
-	//ft_putstr_fd("OK", 1);
+	//ft_putstr_fd("\nOK", 1);
 	fd = 1;
 	stack_a = create_list(argc, argv);
 	stack_b = NULL;
-	while (fd > 0)
+	while (get_next_line(0, &command))
 	{
-		fd = get_next_line(fd, &command);
-		apply_command(command, &stack_a, &stack_b); //free?
+		apply_command(command, &stack_a, &stack_b);
+		free(command);
 	}
+	//apply_command(command, &stack_a, &stack_b);
+	free(command);
 	if (list_is_sorted(argc, stack_a))
-		ft_putstr_fd("OK", 1);
+		ft_putstr_fd("OK\n", 1);
+	else
+		ft_putstr_fd("KO\n", 1);
+	remove_all_elements(stack_a);
+	remove_all_elements(stack_b);
 }
 
 int	main(int argc, char **argv)

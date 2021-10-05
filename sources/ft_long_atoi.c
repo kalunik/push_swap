@@ -38,6 +38,7 @@ long long	ft_long_atoi(const char *str)
 	i = 0;
 	sign = 1;
 	number = 0;
+	if (ft_strlen(str) > 9223372036854775807)
 	while (ft_is_space(str[i]))
 		i++;
 	if (str[i] == '-' || str[i] == '+')

@@ -29,6 +29,7 @@ SRCS	=	sources/list_operations/add_element.c\
 B_SRCS	=	sources/list_operations/ft_listlen.c\
             sources/list_operations/add_element.c\
             sources/list_operations/create_list.c\
+            sources/list_operations/remove_element.c\
             sources/push_swap_operations/push.c\
             sources/push_swap_operations/reverse_rotate.c\
             sources/push_swap_operations/rotate.c\
@@ -55,7 +56,6 @@ $(NAME):	$(OBJS) $(LIBFT)/libft.a includes/push_swap.h
 bonus:
 			@$(MAKE) -C $(LIBFT)
 			@$(MAKE) $(B_NAME)
-			@$(MAKE) clean
 
 $(B_NAME):	$(B_OBJS) $(LIBFT)/libft.a
 			@$(CC) -o $(B_NAME) $(B_OBJS) $(LIBFT)/libft.a

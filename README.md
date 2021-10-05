@@ -19,9 +19,7 @@ Sort numbers with minimum command usage. \
 ### How to test
 
 1. `make`
-2. `./push_swap 3 2 1 5 4` \
-    or run : \
-   ./push_swap ruby -e &#96;"puts (-249..250).to_a.shuffle.join(' ')"&#96;
+2. `./push_swap 3 2 1 5 4`
 3. You can download a [visualizer](https://github.com/o-reo/push_swap_visualizer).
 
 #### Example

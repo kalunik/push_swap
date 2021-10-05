@@ -6,7 +6,7 @@
 /*   By: wjonatho <wjonatho@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/05 13:42:08 by wjonatho          #+#    #+#             */
-/*   Updated: 2021/10/01 22:04:49 by wjonatho         ###   ########.fr       */
+/*   Updated: 2021/10/05 19:05:44 by wjonatho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static inline int	ft_overfilling(int i, char **argv)
 {
-	if (ft_atoi(argv[i]) != ft_long_atoi(argv[i]))
+	if (ft_strlen(argv[i]) > 10 || ft_atoi(argv[i]) != ft_long_atoi(argv[i]))
 	{
 		ft_putstr_fd("Error\n", 1);
 		return (1);
