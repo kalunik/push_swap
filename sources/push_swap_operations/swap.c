@@ -17,11 +17,14 @@ void	swap_1st_two_elements(t_list **head)
 	t_list	*first;
 	t_list	*second;
 
-	first = (*head);
-	second = (*head)->next;
-	first->next = (*head)->next->next;
-	second->next = first;
-	(*head) = second;
+	if (ft_listlen(*head) > 1)
+	{
+		first = (*head);
+		second = (*head)->next;
+		first->next = (*head)->next->next;
+		second->next = first;
+		(*head) = second;
+	}
 }
 
 void	sa(t_list **stack_a)

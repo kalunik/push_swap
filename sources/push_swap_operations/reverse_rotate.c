@@ -6,7 +6,7 @@
 /*   By: wjonatho <wjonatho@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 18:26:00 by wjonatho          #+#    #+#             */
-/*   Updated: 2021/10/01 22:04:49 by wjonatho         ###   ########.fr       */
+/*   Updated: 2021/10/05 23:55:47 by wjonatho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,16 @@ void	reverse_rotate(t_list **head)
 	t_list	*last;
 	t_list	*second;
 
-	last = *head;
-	second = *head;
-	while (last->next->next)
-		last = last->next;
-	*head = last->next;
-	last->next = NULL;
-	(*head)->next = second;
+	if (ft_listlen(*head) > 1)
+	{
+		last = *head;
+		second = *head;
+		while (last->next->next)
+			last = last->next;
+		*head = last->next;
+		last->next = NULL;
+		(*head)->next = second;
+	}
 }
 
 void	rra(t_list **stack_a)

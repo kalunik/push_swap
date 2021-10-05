@@ -75,8 +75,10 @@ void		errors(int argc, char **argv);
 int			*fill_array(int argc, char **argv);
 void		push_swap(int argc, char **argv);
 void		sorting(int argc, char **argv, t_list **stack_a, t_list **stack_b);
+long long	ft_long_atoi(const char *str);
 
 void		checker(int argc, char **argv);
-long long	ft_long_atoi(const char *str);
+int			right_command(char *command);
+void		apply_command(char *command, t_list **stack_a, t_list **stack_b);
 
 #endif

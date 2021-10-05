@@ -6,7 +6,7 @@
 /*   By: wjonatho <wjonatho@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/02 21:02:06 by wjonatho          #+#    #+#             */
-/*   Updated: 2021/10/02 21:04:20 by wjonatho         ###   ########.fr       */
+/*   Updated: 2021/10/06 02:29:25 by wjonatho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ long long	ft_long_atoi(const char *str)
 	i = 0;
 	sign = 1;
 	number = 0;
-	if (ft_strlen(str) > 9223372036854775807)
 	while (ft_is_space(str[i]))
 		i++;
 	if (str[i] == '-' || str[i] == '+')

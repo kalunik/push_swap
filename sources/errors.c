@@ -6,7 +6,7 @@
 /*   By: wjonatho <wjonatho@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/05 13:42:08 by wjonatho          #+#    #+#             */
-/*   Updated: 2021/10/05 19:05:44 by wjonatho         ###   ########.fr       */
+/*   Updated: 2021/10/06 01:14:23 by wjonatho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,9 @@ void	errors(int argc, char **argv)
 		i++;
 		j = 0;
 	}
-	if (ft_is_sorted(argc, argv))
-		exit(0);
+	if (ft_strncmp(argv[0], "./checker", 9))
+	{
+		if (ft_is_sorted(argc, argv))
+			exit(0);
+	}
 }

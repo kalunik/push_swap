@@ -17,15 +17,16 @@ void	rotate(t_list **head)
 	t_list	*previous;
 	t_list	*last;
 
-	if ((*head) == NULL || (*head)->next == NULL)
-		return ;
-	previous = *head;
-	last = *head;
-	*head = (*head)->next;
-	while (previous->next)
-		previous = previous->next;
-	previous->next = last;
-	previous->next->next = NULL;
+	if (ft_listlen(*head) > 1)
+	{
+		previous = *head;
+		last = *head;
+		*head = (*head)->next;
+		while (previous->next)
+			previous = previous->next;
+		previous->next = last;
+		previous->next->next = NULL;
+	}
 }
 
 void	ra(t_list **stack_a)

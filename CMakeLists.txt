@@ -75,6 +75,7 @@ add_executable(
         sources/push_swap_operations/rotate.c
         sources/push_swap_operations/swap.c
         checker_srcs/checker.c
+        checker_srcs/checker_commands.c
         sources/ft_long_atoi.c
         get_next_line/get_next_line.c
         get_next_line/get_next_line_utils.c

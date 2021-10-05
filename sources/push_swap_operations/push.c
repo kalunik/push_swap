@@ -16,10 +16,13 @@ void	push_1st_from_src_stack_to_dst(t_list **src, t_list **dst)
 {
 	t_list	*tmp;
 
-	tmp = *src;
-	*src = (*src)->next;
-	tmp->next = *dst;
-	*dst = tmp;
+	if (*src)
+	{
+		tmp = *src;
+		*src = (*src)->next;
+		tmp->next = *dst;
+		*dst = tmp;
+	}
 }
 
 void	pa(t_list **stack_b, t_list **stack_a)
