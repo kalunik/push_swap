@@ -6,7 +6,7 @@
 /*   By: wjonatho <wjonatho@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/02 18:34:09 by wjonatho          #+#    #+#             */
-/*   Updated: 2021/10/06 02:24:32 by wjonatho         ###   ########.fr       */
+/*   Updated: 2021/10/06 15:17:22 by wjonatho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,12 @@ static inline int	list_is_sorted(int argc, t_list *head)
 
 void	checker(int argc, char **argv)
 {
-	int		fd;
 	char	*command;
 	t_list	*stack_a;
 	t_list	*stack_b;
 
-	fd = 1;
+	if (argc == 1)
+		exit(0);
 	stack_a = create_list(argc, argv);
 	stack_b = NULL;
 	while (get_next_line(0, &command))

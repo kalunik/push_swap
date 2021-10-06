@@ -6,15 +6,13 @@
 /*   By: wjonatho <wjonatho@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/05 13:42:23 by wjonatho          #+#    #+#             */
-/*   Updated: 2021/10/04 19:03:08 by wjonatho         ###   ########.fr       */
+/*   Updated: 2021/10/06 15:07:06 by wjonatho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <stdio.h>
-# include <unistd.h>
 # include "../libft/libft.h"
 # include "../get_next_line/get_next_line.h"
 

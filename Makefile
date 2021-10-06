@@ -34,7 +34,7 @@ all:
 			@$(MAKE) -C $(LIBFT)
 			@$(MAKE) $(NAME)
 
-$(NAME):	$(OBJS) $(LIBFT)/libft.a includes/push_swap.h
+$(NAME):	$(OBJS) $(LIBFT)/libft.a includes/push_swap.h libft/libft.h
 			@$(CC) -o $(NAME) $(OBJS) $(LIBFT)/libft.a
 			@echo "push_swap is ready to use ✅ "
 
@@ -42,7 +42,7 @@ bonus:
 			@$(MAKE) -C $(LIBFT)
 			@$(MAKE) $(B_NAME)
 
-$(B_NAME):	$(B_OBJS) $(LIBFT)/libft.a
+$(B_NAME):	$(B_OBJS) $(LIBFT)/libft.a includes/push_swap.h libft/libft.h get_next_line/get_next_line.h
 			@$(CC) -o $(B_NAME) $(B_OBJS) $(LIBFT)/libft.a
 			@echo "checker is ready to use ✅ "
 
